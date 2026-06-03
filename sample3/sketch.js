@@ -2,7 +2,6 @@ let blush = 0;
 let heart = false;
 let mouthMode = 0;
 let blink = 0;
-let gifSaved = false;
 
 function setup() {
   createCanvas(600, 400);
@@ -10,11 +9,6 @@ function setup() {
 
 function draw() {
   background(255, 245, 235);
-
-  if (!gifSaved && frameCount === 60) {
-    saveGif("character_animation", 5);
-    gifSaved = true;
-  }
 
   let sway = sin(frameCount * 0.05) * 5;
   let eyeOffsetX = map(mouseX, 0, width, -6, 6);
